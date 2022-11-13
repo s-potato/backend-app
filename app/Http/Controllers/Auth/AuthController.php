@@ -19,7 +19,7 @@ class AuthController extends Controller
      */
     public function register(Request $request)
     {
-        // validate dữ liệu
+        // validate
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|unique:users,email|email',

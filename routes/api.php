@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ use App\Http\Controllers\Auth\AuthController;
 Route::post('register', [AuthController::class, 'register']);
 
 Route::prefix('user')->group(function() {
+    Route::get('', [UserController::class, 'index']);
     Route::get('me', [AuthController::class, 'me']);
 });
 
@@ -31,3 +33,5 @@ Route::prefix('auth')->group(function () {
         Route::post('refresh', [AuthController::class, 'refresh']);
     });
 });
+
+Route::resource('tasks', TaskController::class);
