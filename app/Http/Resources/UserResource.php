@@ -17,6 +17,7 @@ class UserResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'scope' => array($this->is_admin ? 'admin' : 'user'),
             'email' => $this->email
         ];
     }

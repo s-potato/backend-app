@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Http\Resources\UserResource;
 
-class TaskController extends Controller
+class UserController extends Controller
 {
     public function __construct()
     {
@@ -14,7 +15,8 @@ class TaskController extends Controller
 
     public function index()
     {
-
-        return Auth::user()->tasks()->get();
+        if (!Auth::user()->is_admin)
+            abort(403);
+        return User::all();
     }
 }

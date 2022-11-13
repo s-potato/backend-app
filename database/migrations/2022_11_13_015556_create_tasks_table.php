@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->boolean('is_done')->default(false);
-            $table->integer('creater_id')->unsigned();
+            $table->integer('creator_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('deleted_at')->nullable();
             $table->timestamps();

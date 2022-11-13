@@ -12,8 +12,8 @@ class Task extends Model
 
     protected $fillable = ['name', 'description', 'is_done', 'user_id'];
 
-    public function creater(){
-        return $this->belongsTo(User::class, 'creater_id');
+    public function creator(){
+        return $this->belongsTo(User::class, 'creator_id');
     }
 
     public function user(){
